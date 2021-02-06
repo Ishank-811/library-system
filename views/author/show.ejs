@@ -1,0 +1,30 @@
+<div class="container">
+<h3><%= author.name %> </h3>
+<% if (bookinfo.length>0) { %>  
+<table>
+    <thead>
+      <tr>
+          <th>Title</th>
+          <th>Image</th>
+          <th>Description</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+       
+        <% bookinfo.forEach(book => { %>  
+      <tr>
+        <td><%= book.title %></td>
+        <td>  <img height="150px" width="150px" src="<%= book.coverImagePath %>" ></img></td>
+        <td><%= book.description %></td>
+        
+      </tr>
+      <% }) %>
+    
+    </tbody>
+  </table>
+  <% } else{ %>  
+    <h1>No book is added </h1>
+    <a style= "font-size:30px ; " href="/books/new"> Add Book </a>
+ <% } %>
+</div>

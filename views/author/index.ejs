@@ -1,0 +1,36 @@
+<div class="container">
+<h1>Search authors</h1>
+<form action="/author" method="GET">
+    <div class="row">
+<lable>Name</lable>
+<input type="text" name="name" value="<%=searchoption.name %>"></input>
+<button  class="waves-effect waves-light btn" type="submit">Search</button>
+</div>
+</form>
+</div>
+
+
+<div class="container">
+<table>
+    <thead>
+      <tr>
+          <th>Name</th>
+          <th>View</th>
+          <th>Edit</th>
+          <th>Delete</th>
+      </tr>
+    </thead>
+   
+    <tbody>
+        <% author.forEach(author => { %>
+      <tr>
+          <td> <%= author.name %></td>
+        <td><a href="author/<%= author.id %> ">view</a> </td>
+        <td><a href="author/<%= author.id %>/edit ">edit</a></td>
+       <td><%-  include("../partials/deleteForm" , {url : `/author/${author.id}` }) %> </td>
+      </tr>
+      <% }) %>
+    </tbody>
+    
+  </table>
+</div>

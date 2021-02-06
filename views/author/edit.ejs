@@ -1,0 +1,15 @@
+  <div class="container">
+        <h1>edit Author</h1>    
+        <div class="row">
+        <form  method="POST" action="/author/<%= author.id %>?_method=PUT" class="col s12">
+          <div class="row">
+            <div class="input-field">
+              <input type="text" id="title" name="name" value="<%= author.name %> " />
+              <label for="title">Title</label>
+            </div>    
+          </div>
+        </div>
+        <button class="waves-effect waves-light btn " type="submit">Update</button>
+        <button  class="waves-effect waves-light btn "href="/author"> Cancel</button>
+        </div>
+    </form>
